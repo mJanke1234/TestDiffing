@@ -179,6 +179,11 @@ public class GroupElement extends ConditionalElement
 
     }
 
+    protected void mergeGroupElements(GroupElement parent, GroupElement child) {
+        parent.type = child.getType();
+        parent.children.clear();
+        parent.children.addAll( child.getChildren() );
+    }
 
     public void pack(final GroupElement parent) {
         if ( this.children.size() == 0 ) {
